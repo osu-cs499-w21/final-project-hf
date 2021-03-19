@@ -1,0 +1,97 @@
+{
+  "name": "HiddenForest",
+  "private": true,
+  "description": "Website for interacting with hidden forest services",
+  "version": "0.1.0",
+  "license": "UNLICENSED",
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "lint": "eslint --ext .tsx,.ts,.jsx,.js src/",
+    "start": "next start",
+    "test": "jest",
+    "test:verbose": "jest --verbose",
+    "test:watch": "jest --watchAll --verbose",
+    "test:coverage": "jest --verbose --coverage",
+    "type-check": "tsc --noEmit",
+    "storybook": "NODE_ENV=production start-storybook -p 6006",
+    "build-storybook": "NODE_ENV=production build-storybook"
+  },
+  "dependencies": {
+    "@headlessui/react": "^0.3.1",
+    "@tailwindcss/forms": "^0.2.1",
+    "axios": "^0.21.1",
+    "iex-cloud": "^2.2.0",
+    "next": "^10.0.9",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0",
+    "react-is": "^17.0.1",
+    "react-redux": "^7.2.2",
+    "redux": "^4.0.5",
+    "styled-components": "^5.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/preset-react": "^7.12.5",
+    "@babel/preset-typescript": "^7.12.1",
+    "@storybook/addon-essentials": "^6.1.21",
+    "@storybook/addon-links": "^6.1.0-beta.6",
+    "@storybook/react": "^6.1.21",
+    "@types/enzyme": "^3.10.7",
+    "@types/jest": "^26.0.15",
+    "@types/lodash": "^4.14.162",
+    "@types/react-dom": "^16.9.9",
+    "@types/react-helmet": "^6.1.0",
+    "@types/react-redux": "^7.1.9",
+    "@types/styled-components": "^5.1.4",
+    "@typescript-eslint/eslint-plugin": "^4.6.0",
+    "@typescript-eslint/parser": "^4.6.0",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.3.1",
+    "autoprefixer": "^10.2.5",
+    "babel-jest": "^26.6.1",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-styled-components": "^1.11.1",
+    "babel-preset-react-app": "^10.0.0",
+    "enzyme": "^3.11.0",
+    "eslint": "^7.12.1",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.21.5",
+    "husky": "^4.3.0",
+    "jest": "^26.6.1",
+    "lint-staged": "^10.5.1",
+    "postcss": "^8.2.8",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-preset-env": "^6.7.0",
+    "prettier": "2.1.1",
+    "tailwindcss": "^2.0.4",
+    "ts-jest": "^26.4.3",
+    "typescript": "^4.0.5",
+    "webpack": "4.44.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/bengeyer-templates/nextjs"
+  },
+  "bugs": {
+    "url": "https://gitlab.com/bengeyer-templates/nextjs/-/issues"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "npm run format"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "npm run type-check && npm run test && npm run lint"
+    }
+  },
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false
+  }
+}
